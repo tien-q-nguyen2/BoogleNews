@@ -1,0 +1,314 @@
+
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+.navbar-laravel {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+/********** My Styles ***********/
+body {
+  margin: 0;
+}
+
+/********** Header ***********/
+header {
+  box-sizing: content-box;
+  height: 48px;
+  padding: 8px;
+  border-bottom: #CCCCCC 3px solid;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo-group, .search-bar, .menu-group {
+  display: flex;
+  align-items: center;
+}
+
+.logo-group {
+  margin-left: 8px;
+}
+
+.fa-bars {
+  font-size: 1.3em;
+}
+
+.logo-group a {
+  padding: 12px 16px;
+  color: grey;
+  border-radius: 50%;
+}
+
+.logo-group a:hover {
+  background: #ddd;
+}
+
+.logo-group p {
+  margin: 0;
+  margin-left: 15px;
+  color: red;
+}
+
+.boo-letters, .gle-letters, .news-letters {
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+.boo-letters {
+  color: #1A73EB;
+}
+
+.gle-letters {
+  color: mediumseagreen;
+}
+
+.news-letters {
+  color: grey;
+}
+
+.search-bar {
+  width: 720px;
+  height: 46px;
+  background: #F5F5F5;
+
+  justify-content: none;
+}
+
+.search-bar a {
+  color: #aaa;
+  font-size: 1.3em;
+  padding: 10px 20px;
+}
+
+.search-bar input {
+  padding: 0 10px;
+  width: 90%;
+  background: #F5F5F5;
+  border: 0;
+  height: 48px;
+}
+
+.search-bar input:focus {
+  outline: 1px solid grey;
+  background: white;
+}
+
+.menu-group img {
+  width: 50px;
+  height: 50px;
+}
+
+.menu-group i {
+  font-size: 1.3em;
+}
+
+.menu-group a {
+  padding: 8px;
+  margin: 6px;
+  color: grey;
+}
+
+.menu-group a:hover {
+  color: #444;
+}
+
+.menu-group img {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+}
+
+/************** Main section **************/
+main {
+  display: flex;
+  max-width: 1500px;
+  margin-right: 250px;
+}
+
+.left-sidebar {
+  margin-top: 10px;
+  width: 250px;
+  margin-right: 40px;
+  flex: none;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.left-sidebar hr {
+  background: #eee;
+  height: 1px;
+  width: 85%;
+}
+
+.left-sidebar a {
+  color: grey;
+  text-decoration: none;
+  padding: 10px 25px;
+  border-top-right-radius: 80px;
+  border-bottom-right-radius: 80px;
+}
+
+.left-sidebar a:hover {
+  color: #1A73EB;
+  background: #E3EDFD;
+
+  font-weight: bold;
+}
+
+.left-sidebar a i {
+  font-size: 1.3em;
+  width: 1.3em;
+  margin-right: 15px;
+}
+
+.compressible-space {
+  flex: 1;
+}
+
+.headlines-section {
+  flex: none;
+  width: 770px;
+  padding-right: 32px;
+}
+
+.news-category {
+  margin-top: 40px;
+}
+
+.news-category h1 {
+  font-size: 1.4em;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.headline-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border: 1px lightgrey solid;
+  border-radius: 10px;
+
+  padding: 20px 15px 40px;
+  margin: 20px 0;
+}
+
+.headline-card img {
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+  margin-left: 10px;
+}
+
+.main-headline {
+  display: flex;
+  flex-direction: column;
+}
+
+.headline-card h2 {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.headline-subtitles {
+  display: flex;
+}
+
+.headline-card h3 {
+  font-size: 1em;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 3px;
+}
+
+.child-headline-list {
+  padding-left: 25px;
+}
+
+.author, .postedTime {
+  font-size: 0.85em;
+  color: grey;
+}
+
+.bullet-point {
+  color: grey;
+  padding-left: 10px;
+  font-size: 0.5em;
+
+  display: flex;
+  align-items: center;
+}
+
+.postedTime {
+  padding-left: 10px;
+}
+
+@media screen and (max-width: 1400px) {
+  main {
+    margin-right: 0;
+  }
+  .compressible-space {
+    flex: 0;
+  }
+  .headlines-section {
+    flex: 1;
+  }
+}
+
+.right-sidebar {
+  width: 350px;
+  margin-top: 80px;
+  flex: none;
+}
+
+.weather-forecast {
+  background:#F8F9FA;
+}
+
+.in-the-news {
+  background: #f4f4f4;
+  padding: 10px;
+}
+
+.in-the-news h4 {
+    font-weight: bold;
+    font-size: 1.1em;
+    color: grey;
+    margin: 0;
+    padding: 5px 0 0 5px;
+}
+
+.trending-topics {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.trending-topic {
+  font-size: 0.9em;
+  font-weight: bold;
+
+  background: white;
+  border-radius: 10px;
+  border: 1px lightgrey solid;
+  padding: 5px;
+  margin: 5px;
+}
+
+.trending-topic a {
+  color: grey;
+  text-decoration: none;
+}
+
+.trending-topic:hover {
+  box-shadow: 0 0 1px 1px lightgrey;
+}

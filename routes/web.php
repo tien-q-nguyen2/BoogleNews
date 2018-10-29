@@ -1,0 +1,174 @@
+<?php
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
+|
+*/
+
+class NewsCategory {
+	function __construct(){
+		$this->name = '';
+		$this->mainHeadlines = [];
+	}
+}
+
+class Headline {
+	function __construct(){
+		$this->title = '';
+		$this->author = '';
+		$this->postedTime = '';
+		$this->childHeadlines = [];
+		$this->imageURL = '';
+	}
+}
+
+class WeatherForecast {
+	function __construct(){
+		$this->when = '';
+		$this->lowestTemperature = '';
+		$this->highestTemperature = '';
+		$this->imageURL = '';
+	}
+}
+
+Route::get('/', function() {
+	//----------- First category ----------//
+	$category1 = new NewsCategory();
+	$category1->name = 'Headlines';
+	
+	//First main headline of the first category
+	$mainHeadline = new Headline();
+	$mainHeadline->title = '29 charges for man accused of gunning down 11 during baby naming ceremony at synagogue';
+	$mainHeadline->author = 'CANOE';
+	$mainHeadline->postedTime = 'today';
+	$mainHeadline->imageURL = 'https://lh3.googleusercontent.com/NXA5A1my2S8NqdiDliFVHhdsixB4nNptyCRMePk-VOHLw99LwhldrOo2ycXa6WECuyYdtVhHPTdtJWnhpA=pf-w200-h200';
+	array_push($category1->mainHeadlines, $mainHeadline);
+	
+	$childHeadline = new Headline();
+	$childHeadline->title = '11 dead, 6 injured in shooting at Tree of Life synagogue in Pittsburgh';
+	$childHeadline->author = 'Global News';
+	$childHeadline->postedTime = 'yesterday';
+	array_push($mainHeadline->childHeadlines, $childHeadline);
+	
+	$childHeadline = new Headline();
+	$childHeadline->title = "'Brutally murdered simply because of their faith': 11 killed by gunman in Pittsburgh synagogue";
+	$childHeadline->author = 'CBC News';
+	$childHeadline->postedTime = 'yesterday';
+	array_push($mainHeadline->childHeadlines, $childHeadline);
+	
+	$childHeadline = new Headline();
+	$childHeadline->title = "Six injure, 'atleast 10 people' dead in 'wicked act of mass murder' shooting in Pittsburgh synagogue";
+	$childHeadline->author = 'National Post';
+	$childHeadline->postedTime = 'today';
+	array_push($mainHeadline->childHeadlines, $childHeadline);
+	
+	$childHeadline = new Headline();
+	$childHeadline->title = "Suspect in Pittsburgh synagogue killing of 11 charged with 29 counts";
+	$childHeadline->author = 'The Globe and Mail';
+	$childHeadline->postedTime = 'today';
+	array_push($mainHeadline->childHeadlines, $childHeadline);
+	
+	//Second headline of the first category
+	$mainHeadline = new Headline();
+	$mainHeadline->title = 'Midterms elections polls 2018: Who will win in Senate and House of Representatives?';
+	$mainHeadline->author = 'Express.co.uk';
+	$mainHeadline->postedTime = 'one hour ago';
+	$mainHeadline->imageURL = 'https://lh4.googleusercontent.com/proxy/MfkpSPiNeCMM05YP0lyTrGZx3jUhaELQa1i6OsDT89glT25Su9QREHMOH4ZbnAeZNguKwMsA_lU_ONWTnO7nB5DVPOrqst_xAZ5H2T1NOyKHoSKLdzs=pf-w200-h200';
+	array_push($category1->mainHeadlines, $mainHeadline);
+	
+	//Third headline of the first category
+	$mainHeadline = new Headline();
+	$mainHeadline->title = 'Toronto police increase security around places of worship in wake of Pittsburgh shooting';
+	$mainHeadline->author = 'Toronto Star';
+	$mainHeadline->postedTime = 'today';
+	$mainHeadline->imageURL = 'https://lh3.googleusercontent.com/HevhejECYZ5CtXNaythlea1NKoLi771aULvkBDlGTz7w3YppsZQMH-0Oy3KzsanG-sQ2dzJVjVFIPBL76EY=pf-w200-h200';
+	array_push($category1->mainHeadlines, $mainHeadline);
+	
+	$childHeadline = new Headline();
+	$childHeadline->title = "'I'm just torn apart:' Pittsburgh's Jewish community in shock after 11 killed in synagogue shooting";
+	$childHeadline->author = 'Global News';
+	$childHeadline->postedTime = 'today';
+	array_push($mainHeadline->childHeadlines, $childHeadline);
+	
+	//Fourth headline of the first category
+	$mainHeadline = new Headline();
+	$mainHeadline->title = 'Police hunt for driver after woman killed crossing Ont. street';
+	$mainHeadline->author = 'CTV News';
+	$mainHeadline->postedTime = 'one hour ago';
+	$mainHeadline->imageURL = 'https://lh3.googleusercontent.com/proxy/3aD_rGhk9IZTdzL1UCKbf3nZ1wHV-JNDcUJA4gWwvmjo60AU8ZhSouQxOZ0rAcMotYuBJZ2cvbE0RybM6Nn8Mp-8rI3o2cPAR2Vkvjkd5ZHzAfphWNWecS1BwLCC3GxdFK01q7XiihgaJjtAlat99AXP-0W8SX_QkXd9Visj8rJusuT3mvnW=pf-w200-h200';
+	array_push($category1->mainHeadlines, $mainHeadline);
+	
+	//----------- Second category ----------//
+	$category2 = new NewsCategory();
+	$category2->name = 'For you';
+	
+	//First headline of the second category
+	$mainHeadline = new Headline();
+	$mainHeadline->title = 'Finance minister not happy with federal money for 2026 Calgary Olympic bid';
+	$mainHeadline->author = 'Global News Edmonton';
+	$mainHeadline->postedTime = 'today';
+	$mainHeadline->imageURL = 'https://lh3.googleusercontent.com/9Pk1TK6VUfwtRwtrwrlrXp3KH3HOSMLZjgMjAY58IMCyRQRjMhCq-QL37XyUc9-gHmOoj6bFGcuavKaOqw=pf-w200-h200';
+	array_push($category2->mainHeadlines, $mainHeadline);
+	
+	$childHeadline = new Headline();
+	$childHeadline->title = "'Braid: Nenshi ready to cancel Olympic bid over funding furor";
+	$childHeadline->author = 'Calgary Herald';
+	$childHeadline->postedTime = 'today';
+	array_push($mainHeadline->childHeadlines, $childHeadline);
+	
+	//Second headline of the second category
+	$mainHeadline = new Headline();
+	$mainHeadline->title = "Following the money: Alberta's active political action committees";
+	$mainHeadline->author = 'Edmonton Journal';
+	$mainHeadline->postedTime = 'today';
+	$mainHeadline->imageURL = 'https://lh3.googleusercontent.com/FeKUCpEgk6Q_nJx3XflFBy77OEli2tzgA7JAh4vIivXMP7D1V_CrNTIc4Zb7mm4vxbFhJzVN9ntPACi6hMs=pf-w200-h200';
+	array_push($category2->mainHeadlines, $mainHeadline);
+	
+	//Third headline of the second category
+	$mainHeadline = new Headline();
+	$mainHeadline->title = "Canadian Olympian Dave Duncan speaks about 2018 Winter Games arrest";
+	$mainHeadline->author = 'CBC News';
+	$mainHeadline->postedTime = 'today';
+	$mainHeadline->imageURL = 'https://lh3.googleusercontent.com/HWAicicWUHUmRa2afmXw42GEmqMZmGUEa5sK_f65YhpjujbhfoR32gYVJAExeqyANxfB-UuotDO13aqry__X=pf-w200-h200';
+	array_push($category2->mainHeadlines, $mainHeadline);
+	
+	//Fourth headline of the second category
+	$mainHeadline = new Headline();
+	$mainHeadline->title = "Grab the Visual Studio 2019 Preview now (while it lasts)";
+	$mainHeadline->author = 'MSPoweruser';
+	$mainHeadline->postedTime = 'today';
+	$mainHeadline->imageURL = 'https://lh4.googleusercontent.com/proxy/o0Cz0QHMZiKd9g1dIsC6X69iMnwQ7x7Ij-cGDj7K7fL9fJR-bkQz8l37dW1DfTg5p7AXc4G_W7Mkz7Tck4qLIHb6XlhtpF_vhCpgYVlvhqg9vDXiYHarlmMfwFCg0mQA72oyzm3k=pf-w200-h200';
+	array_push($category2->mainHeadlines, $mainHeadline);
+
+	$viewData = [
+		'categories' => [$category1, $category2],
+
+		'weatherForecastRightNow' => [
+			'presentTemperature' => '7',
+			'presentDescritpion' => 'Partly cloudy',
+			'presentIllustrationURL' => 'https://lh3.googleusercontent.com/proxy/KOElqUH0RqiFITmz4nXxxhKOa4X3QivOknmm9SVbNaqHvx0zjEdkWReeAIh8WUvoN3BaBRtJI-yFRsQaqo39vdEO_ctpHCBvF6wsWd4rM4wEqxQBOSVzG48z27TKeV-7e6e20IhlXQUEDQ8T5SfJyoBFHA'
+		],
+
+		'inTheNews' => [
+			'Toronto Maple Leafs', 
+			'Saudi Arabia', 
+			'Edmonton Oilers',
+			'Leicester City F.C.',
+			'Lion Air',
+			'Brazil',
+			'Boston Red Sox',
+			'Canadian Football League',
+			'Jamal Khashoggi',
+			'Los Angeles Dodgers',
+		]
+	];
+
+	return view('welcome', $viewData);
+	
+});
