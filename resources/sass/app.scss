@@ -16,6 +16,7 @@
 /********** My Styles ***********/
 body {
   margin: 0;
+  background: white;
 }
 
 /********** Header ***********/
@@ -27,6 +28,9 @@ header {
 
   display: flex;
   justify-content: space-between;
+  position: fixed;
+  width: 100%;
+  background: white;
 }
 
 .logo-group, .search-bar, .menu-group {
@@ -271,21 +275,17 @@ main {
   flex: none;
 }
 
-.weather-forecast {
-  background:#F8F9FA;
-}
-
 .in-the-news {
-  background: #f4f4f4;
-  padding: 10px;
+  background: #F8F9FA;
+  padding: 10px 15px;
 }
 
-.in-the-news h4 {
+.in-the-news h4, .weather-forecast-card h4 {
     font-weight: bold;
     font-size: 1.1em;
     color: grey;
     margin: 0;
-    padding: 5px 0 0 5px;
+    padding: 5px 0 0;
 }
 
 .trending-topics {
@@ -301,7 +301,7 @@ main {
   border-radius: 10px;
   border: 1px lightgrey solid;
   padding: 5px;
-  margin: 5px;
+  margin: 5px 0;
 }
 
 .trending-topic a {
@@ -312,3 +312,79 @@ main {
 .trending-topic:hover {
   box-shadow: 0 0 1px 1px lightgrey;
 }
+
+.weather-forecast-card {
+  display: flex;
+  flex-direction: column;
+  
+  background: #F8F9FA;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  padding: 10px 15px;
+}
+
+.weather-forecast-card p {
+  font-weight: bold;
+}
+
+.current-weather {
+  display: flex;
+  justify-content: space-between;
+}
+
+.current-weather p {
+  margin: 0;
+}
+
+.current-weather img {
+  width: 65px;
+  height: 65px;
+  margin-right: 10px;
+}
+
+.current-temperature {
+  font-size: 1.8em;
+}
+
+.weather-forecast-5days {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  padding: 0 10px;
+}
+
+.weather-forecast-5days img {
+  width: 40px;
+  height: 40px;
+}
+
+.weather-forecast-day p {
+  margin: 0;
+}
+
+.weather-forecast-day {
+  align-items: center;
+  text-align: center;
+  font-weight: bold;
+}
+
+.weather-forecast-day img {
+  margin: 8px 0;
+}
+
+.weather-forecast-day .max-temperature {
+  font-size: 0.8em;
+}
+
+.weather-forecast-day .min-temperature {
+  font-size: 0.8em;
+  font-weight: normal;
+}
+
+.weather-forecast-card .weather-card-footer {
+  font-size: 0.8em;
+  padding-left: 10px;
+  letter-spacing: 3px;
+}
+
+

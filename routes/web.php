@@ -28,11 +28,11 @@ class Headline {
 	}
 }
 
-class WeatherForecast {
+class SingleDayWeatherForecast {
 	function __construct(){
 		$this->when = '';
-		$this->lowestTemperature = '';
-		$this->highestTemperature = '';
+		$this->maxTemperature = '';
+		$this->minTemperature = '';
 		$this->imageURL = '';
 	}
 }
@@ -146,13 +146,45 @@ Route::get('/', function() {
 	$mainHeadline->imageURL = 'https://lh4.googleusercontent.com/proxy/o0Cz0QHMZiKd9g1dIsC6X69iMnwQ7x7Ij-cGDj7K7fL9fJR-bkQz8l37dW1DfTg5p7AXc4G_W7Mkz7Tck4qLIHb6XlhtpF_vhCpgYVlvhqg9vDXiYHarlmMfwFCg0mQA72oyzm3k=pf-w200-h200';
 	array_push($category2->mainHeadlines, $mainHeadline);
 
+	//Weather forecast for 5 days
+	$weatherToday = new SingleDayWeatherForecast();
+	$weatherToday->when = 'Today';
+	$weatherToday->maxTemperature = '11';
+	$weatherToday->minTemperature = '1';
+	$weatherToday->imageURL = 'https://lh3.googleusercontent.com/proxy/KOElqUH0RqiFITmz4nXxxhKOa4X3QivOknmm9SVbNaqHvx0zjEdkWReeAIh8WUvoN3BaBRtJI-yFRsQaqo39vdEO_ctpHCBvF6wsWd4rM4wEqxQBOSVzG48z27TKeV-7e6e20IhlXQUEDQ8T5SfJyoBFHA';
+
+	$weatherDay2 = new SingleDayWeatherForecast();
+	$weatherDay2->when = 'Tue.';
+	$weatherDay2->maxTemperature = '10';
+	$weatherDay2->minTemperature = '-1';
+	$weatherDay2->imageURL = 'https://lh3.googleusercontent.com/proxy/KOElqUH0RqiFITmz4nXxxhKOa4X3QivOknmm9SVbNaqHvx0zjEdkWReeAIh8WUvoN3BaBRtJI-yFRsQaqo39vdEO_ctpHCBvF6wsWd4rM4wEqxQBOSVzG48z27TKeV-7e6e20IhlXQUEDQ8T5SfJyoBFHA';
+	
+	$weatherDay3 = new SingleDayWeatherForecast();
+	$weatherDay3->when = 'Wed.';
+	$weatherDay3->maxTemperature = '9';
+	$weatherDay3->minTemperature = '-2';
+	$weatherDay3->imageURL = 'https://lh5.googleusercontent.com/proxy/4WTSIIDw66Cox_tvxEgYTF3eYr94It7mAsib9UhQLsAJgyawdf5zaburHeJU4D27GlyAYpOrqEZqvYJsd_ibQdvKz2oWuZi5VNUuS4DVgr-JH9pVr3aO62W5eck94-W6yEARBUyVikqYgzwk';
+	
+	$weatherDay4 = new SingleDayWeatherForecast();
+	$weatherDay4->when = 'Thu.';
+	$weatherDay4->maxTemperature = '4';
+	$weatherDay4->minTemperature = '-2';
+	$weatherDay4->imageURL = 'https://lh3.googleusercontent.com/proxy/ssGF_4ZADor_bABtyHQlMTM5juYwYH-X_14tkhEM33kgkK2Il3tiPcaWFGEVkXik7Vspa0yoiAQN-pB41hiEMcb1PClJ-duwo8mRwBH27AZ6ug8qKCVxtFH2jpinT_tHH2xREeno1oOLFGOP7vkkoAExsyeUTMw';
+	
+	$weatherDay5 = new SingleDayWeatherForecast();
+	$weatherDay5->when = 'Fri.';
+	$weatherDay5->maxTemperature = '3';
+	$weatherDay5->minTemperature = '-3';
+	$weatherDay5->imageURL = 'https://lh6.googleusercontent.com/proxy/9wZNtnf-fjbKzUeYWGGmAdYD4LPXQTxcjSLVjFeKoiThblMCIEa1vnqZ8i5kS8OjMgvgMoFkgw95gF7XAYexEzHZx85cbQqUfqQYHqOFyCIO_uR-uDnpd3ZgA2wXWUyQUh9NYgZbdNyRRCJi6cEWSIeNajE7J-5Mtak';
+
 	$viewData = [
 		'categories' => [$category1, $category2],
 
-		'weatherForecastRightNow' => [
-			'presentTemperature' => '7',
-			'presentDescritpion' => 'Partly cloudy',
-			'presentIllustrationURL' => 'https://lh3.googleusercontent.com/proxy/KOElqUH0RqiFITmz4nXxxhKOa4X3QivOknmm9SVbNaqHvx0zjEdkWReeAIh8WUvoN3BaBRtJI-yFRsQaqo39vdEO_ctpHCBvF6wsWd4rM4wEqxQBOSVzG48z27TKeV-7e6e20IhlXQUEDQ8T5SfJyoBFHA'
+		'currentWeather' => [
+			'location' => 'Calgary',
+			'temperature' => '7',
+			'description' => 'Partly cloudy',
+			'imageURL' => 'https://lh3.googleusercontent.com/proxy/KOElqUH0RqiFITmz4nXxxhKOa4X3QivOknmm9SVbNaqHvx0zjEdkWReeAIh8WUvoN3BaBRtJI-yFRsQaqo39vdEO_ctpHCBvF6wsWd4rM4wEqxQBOSVzG48z27TKeV-7e6e20IhlXQUEDQ8T5SfJyoBFHA'
 		],
 
 		'inTheNews' => [
@@ -166,6 +198,14 @@ Route::get('/', function() {
 			'Canadian Football League',
 			'Jamal Khashoggi',
 			'Los Angeles Dodgers',
+		],
+
+		'weatherForecastFor5Days' => [
+			$weatherToday,
+			$weatherDay2,
+			$weatherDay3,
+			$weatherDay4,
+			$weatherDay5,
 		]
 	];
 

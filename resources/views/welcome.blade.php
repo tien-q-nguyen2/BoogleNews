@@ -103,7 +103,46 @@
         </div> 
 
         <div class="right-sidebar">
-            <div class='weather-forecast'></div>
+            <div class='weather-forecast-card'>
+                <h4><?php echo $currentWeather['location'] ?></h4>
+                <div>  
+                    <hr>
+                </div>
+                <div class='current-weather'>
+                    <div class='current-weather-left'>
+                        <p><?php echo $currentWeather['description'] ?></p>
+                        <p>
+                        <span class='current-temperature'>
+                            <?php echo $currentWeather['temperature'] ?>°
+                        </span>C
+                        </p>
+                    </div>
+                    <div class='current-weather-right'>
+                        <img src="<?php echo $currentWeather['imageURL'] ?>" alt="">
+                    </div>
+                </div>
+
+                <div class='weather-forecast-5days'>
+                    <?php foreach($weatherForecastFor5Days as $weatherForecastForADay): ?>
+                        <div class='weather-forecast-day'>
+                            <p><?php echo $weatherForecastForADay->when ?></p>
+                            <img src="<?php echo $weatherForecastForADay->imageURL ?>">
+                            <p class='max-temperature'>
+                                <?php echo $weatherForecastForADay->maxTemperature ?>°C
+                            </p>
+                            <p class='min-temperature'>
+                                <?php echo $weatherForecastForADay->minTemperature ?>°C
+                            </p>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+                <div>  
+                    <hr>
+                </div>
+                <div class='weather-card-footer'><b>C</b> | F | K</div>
+
+            </div>
+
             <div class='in-the-news'>
                 <h4>In the news</h4>
                 <hr>
