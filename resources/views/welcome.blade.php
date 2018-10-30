@@ -64,41 +64,7 @@
                 <h1><?php echo $category->name ?></h1>
                 <?php foreach ($category->mainHeadlines as $mainHeadline): ?>
                 <div class='headline-card'>
-                    <div class='main-headline'>
-                        <h2 class='headline-title'>
-                            <?php echo $mainHeadline->title ?>
-                        </h2>
-                        <div class='headline-subtitles'>
-                            <div class='author'>
-                                <?php echo $mainHeadline->author ?>
-                            </div>
-                            <div class='posted-time'>
-                                <?php echo $mainHeadline->postedTime ?>
-                            </div>
-                        </div>
-
-                        <ul class='child-headline-list'>
-                            <?php foreach ($mainHeadline->childHeadlines as $childHeadline): ?>
-                            <li>
-                                <div class='child-headline'>
-                                    <h3 class='headline-title'>
-                                        <?php echo $childHeadline->title ?>
-                                    </h3>
-                                    <div class='headline-subtitles'>
-                                        <div class='author'>
-                                            <?php echo $childHeadline->author ?>
-                                        </div>
-                                        <div class='bullet-point'>•</div>
-                                        <div class='posted-time'>
-                                            <?php echo $childHeadline->postedTime ?>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <?php endforeach; ?>
-                        </ul>
-                    </div>
-                    <img src="<?php echo $mainHeadline->imageURL ?>" >
+                    @include('headlinesForACategory')
                 </div>
                 <?php endforeach; ?>
             </div>
@@ -108,57 +74,11 @@
 
         <div class="right-sidebar">
             <div class='weather-forecast-card'>
-                <h4><?php echo $currentWeather['location'] ?></h4>
-                <div>  
-                    <hr>
-                </div>
-                <div class='current-weather'>
-                    <div class='current-weather-left'>
-                        <p><?php echo $currentWeather['description'] ?></p>
-                        <p>
-                        <span class='current-temperature'>
-                            <?php echo $currentWeather['temperature'] ?>°
-                        </span>C
-                        </p>
-                    </div>
-                    <div class='current-weather-right'>
-                        <img src="<?php echo $currentWeather['imageURL'] ?>" alt="">
-                    </div>
-                </div>
-
-                <div class='weather-forecast-5days'>
-                    <?php foreach($weatherForecastFor5Days as $weatherForecastForADay): ?>
-                        <div class='weather-forecast-day'>
-                            <p><?php echo $weatherForecastForADay->when ?></p>
-                            <img src="<?php echo $weatherForecastForADay->imageURL ?>">
-                            <p class='max-temperature'>
-                                <?php echo $weatherForecastForADay->maxTemperature ?>°C
-                            </p>
-                            <p class='min-temperature'>
-                                <?php echo $weatherForecastForADay->minTemperature ?>°C
-                            </p>
-                        </div>
-                    <?php endforeach; ?>
-                </div>
-                <div>  
-                    <hr>
-                </div>
-                <div class='weather-card-footer'><b>C</b> | F | K</div>
-
+                @include('weatherForecastSection')
             </div>
 
             <div class='in-the-news'>
-                <h4>In the news</h4>
-                <hr>
-                <div class='trending-topics'>
-                    <?php foreach ($inTheNews as $topic): ?>
-                    <div class='trending-topic'>
-                        <a href="#">
-                            <?php echo $topic ?>
-                        </a>
-                    </div>
-                    <?php endforeach; ?>
-                </div>
+                @include('inTheNewsSection')
             </div>
         </div>
     </main>

@@ -87,7 +87,7 @@ Route::get('/', function() {
 	$mainHeadline->title = 'Toronto police increase security around places of worship in wake of Pittsburgh shooting';
 	$mainHeadline->author = 'Toronto Star';
 	$mainHeadline->postedTime = 'today';
-	$mainHeadline->imageURL = 'https://lh3.googleusercontent.com/HevhejECYZ5CtXNaythlea1NKoLi771aULvkBDlGTz7w3YppsZQMH-0Oy3KzsanG-sQ2dzJVjVFIPBL76EY=pf-w200-h200';
+	$mainHeadline->imageURL = 'https://lh3.googleusercontent.com/UYQ7I7T9KbhaDM7Ruh__Pdhuztys8kNx97NX_zYmwDcHpTbiC4xNJt6eMDh7AYB9crzn2mA63Qh2Y8Xkots=pf-w200-h200';
 	array_push($category1->mainHeadlines, $mainHeadline);
 	
 	$childHeadline = new Headline();
