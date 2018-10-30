@@ -47,7 +47,7 @@ Route::get('/', function() {
 	$mainHeadline->title = '29 charges for man accused of gunning down 11 during baby naming ceremony at synagogue';
 	$mainHeadline->author = 'CANOE';
 	$mainHeadline->postedTime = 'today';
-	$mainHeadline->imageURL = 'https://lh3.googleusercontent.com/NXA5A1my2S8NqdiDliFVHhdsixB4nNptyCRMePk-VOHLw99LwhldrOo2ycXa6WECuyYdtVhHPTdtJWnhpA=pf-w200-h200';
+	$mainHeadline->imageURL = 'https://lh5.googleusercontent.com/proxy/BfEBYNUTG_ieJOv5BiorunDM88L67BhupBj9ZKWxvLzt9NraIqw7Zv38DFAKGW7DbbnhFOFG0JdcJw3kcE4Mr5dFEfHvGMRsbZLAmTenAHWEH4SUaVHB5OqVxGhmirldW7ZXPSFiFkyLBFSwd1Ok5B0B2yuj=pf-w200-h200';
 	array_push($category1->mainHeadlines, $mainHeadline);
 	
 	$childHeadline = new Headline();

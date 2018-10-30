@@ -33,6 +33,8 @@
         </div>
     </header>
 
+    <div class='header-placeholder'></div>
+
     <main>
         <div class="left-sidebar">
             <a href="#"><i class="fas fa-newspaper"></i>Top stories</a>
@@ -50,6 +52,8 @@
             <a href="#"><i class="fas fa-flask"></i>Science</a>
             <a href="#"><i class="fas fa-dumbbell"></i>Health</a>
         </div>
+        
+        <div class='left-sidebar-placeholder'></div>
 
         <div class='compressible-space'></div>
 
@@ -68,7 +72,7 @@
                             <div class='author'>
                                 <?php echo $mainHeadline->author ?>
                             </div>
-                            <div class='postedTime'>
+                            <div class='posted-time'>
                                 <?php echo $mainHeadline->postedTime ?>
                             </div>
                         </div>
@@ -85,7 +89,7 @@
                                             <?php echo $childHeadline->author ?>
                                         </div>
                                         <div class='bullet-point'>•</div>
-                                        <div class='postedTime'>
+                                        <div class='posted-time'>
                                             <?php echo $childHeadline->postedTime ?>
                                         </div>
                                     </div>

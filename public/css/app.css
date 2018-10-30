@@ -10486,7 +10486,8 @@ header {
           box-sizing: content-box;
   height: 48px;
   padding: 8px;
-  border-bottom: #CCCCCC 3px solid;
+  -webkit-box-shadow: 0 2px 8px 0 #999;
+          box-shadow: 0 2px 8px 0 #999;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -10496,6 +10497,13 @@ header {
   position: fixed;
   width: 100%;
   background: white;
+}
+
+.header-placeholder {
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  height: 48px;
+  padding: 8px;
 }
 
 .logo-group,
@@ -10580,6 +10588,10 @@ header {
   background: white;
 }
 
+.fa-times {
+  visibility: hidden;
+}
+
 .menu-group img {
   width: 50px;
   height: 50px;
@@ -10629,6 +10641,15 @@ main {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  position: fixed;
+}
+
+.left-sidebar-placeholder {
+  width: 250px;
+  margin-right: 40px;
+  -webkit-box-flex: 0;
+      -ms-flex: none;
+          flex: none;
 }
 
 .left-sidebar hr {
@@ -10640,21 +10661,30 @@ main {
 .left-sidebar a {
   color: grey;
   text-decoration: none;
-  padding: 10px 25px;
+  padding: 9px 25px;
   border-top-right-radius: 80px;
   border-bottom-right-radius: 80px;
 }
 
-.left-sidebar a:hover {
+.left-sidebar a:first-child {
   color: #1A73EB;
   background: #E3EDFD;
   font-weight: bold;
+  margin-top: 10px;
+}
+
+.left-sidebar a:hover {
+  color: #1A73EB;
 }
 
 .left-sidebar a i {
   font-size: 1.3em;
   width: 1.3em;
   margin-right: 15px;
+}
+
+.left-sidebar a {
+  font-size: 1em;
 }
 
 .compressible-space {
@@ -10694,7 +10724,7 @@ main {
           justify-content: space-between;
   border: 1px lightgrey solid;
   border-radius: 10px;
-  padding: 20px 15px 40px;
+  padding: 20px 15px 30px;
   margin: 20px 0;
 }
 
@@ -10739,7 +10769,7 @@ main {
 }
 
 .author,
-.postedTime {
+.posted-time {
   font-size: 0.85em;
   color: grey;
 }
@@ -10756,7 +10786,7 @@ main {
           align-items: center;
 }
 
-.postedTime {
+.posted-time {
   padding-left: 10px;
 }
 
