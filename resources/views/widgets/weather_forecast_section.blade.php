@@ -18,7 +18,7 @@
 
 <div class='weather-forecast-5days'>
     <?php foreach($weatherForecastFor5Days as $weatherForecastForADay): ?>
-        @include('weather_forecast_for_a_day')
+        @include('widgets/weather_forecast_for_a_day')
     <?php endforeach; ?>
 </div>
 <div>  

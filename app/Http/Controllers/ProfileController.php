@@ -14,7 +14,7 @@ class ProfileController extends Controller
             'user' => $user,
             'profile' => $profile
         ];
-        return view('profile_form', $viewData);
+        return view('forms/profile_form', $viewData);
     }
 
     public function update()

@@ -8,14 +8,14 @@
             <h5>&nbsp;&nbsp;No posts yet</h5>
         <?php endif; ?>
         <?php foreach ($headlines as $headline): ?>
-            @include('headline_card')
+            @include('content/headline_card')
         <?php endforeach; ?>
     </div>
 
     <?php if ($authorId !== 0): ?>
-        @include('user_profile')
+        @include('content/user_profile')
     <?php endif; ?>
 </div>
 
-@include('ajax_like_script')
+@include('script/ajax_like_script')
 @endsection

@@ -14,21 +14,21 @@
                             <form action="/profile" method="post">
                                 <?php echo csrf_field() ?>
 
-                                @include('text_input', [
+                                @include('forms/text_input', [
                                     'name' => 'image',
                                     'default' => $profile->image,
                                     'label' => 'Profile Image',
                                     'placeholder' => 'This field can be empty (if not, please include http://)'
                                 ]) 
 
-                                @include('text_input', [
+                                @include('forms/text_input', [
                                     'name' => 'description',
                                     'default' => $profile->description,
                                     'label' => 'Description',
                                     'placeholder' => 'Please type in something here'
                                 ])
 
-                                @include('text_input', [
+                                @include('forms/text_input', [
                                     'name' => 'website',
                                     'default' => $profile->website,
                                     'label' => 'Website',

@@ -16,7 +16,7 @@ class CreatePostController extends Controller
             'user' => $user,
             'defaultImage' => $defaultImage
         ];
-        return view('create_post_form', $viewData);
+        return view('forms/create_post_form', $viewData);
     }
 
     public function update()

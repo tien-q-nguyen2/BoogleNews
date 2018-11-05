@@ -11,7 +11,7 @@
 <body>
 
     <header>
-        @include('header_bar')
+        @include('header/header_bar')
     </header>
     <div class='header-placeholder'></div>
 

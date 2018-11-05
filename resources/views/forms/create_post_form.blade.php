@@ -14,14 +14,14 @@
                             <form action="/create_post" method="post">
                                 <?php echo csrf_field() ?>
 
-                                @include('text_input', [
+                                @include('forms/text_input', [
                                     'name' => 'title',
                                     'default' => '',
                                     'label' => 'Title of the new headline',
                                     'placeholder' => 'Please type in something here'
                                 ]) 
 
-                                @include('text_input', [
+                                @include('forms/text_input', [
                                     'name' => 'image',
                                     'default' => $defaultImage,
                                     'label' => 'Image to go with the headline',
