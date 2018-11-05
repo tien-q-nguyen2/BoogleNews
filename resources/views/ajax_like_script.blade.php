@@ -35,6 +35,7 @@
                     }
                 };
                 xHttpRequest.open("GET", "/like/" + <?php echo $headline->id ?>, true);
+                xHttpRequest.setRequestHeader("X-CSRF-TOKEN", "{{ csrf_token() }}");
                 xHttpRequest.send();
             })
         }
@@ -56,6 +57,7 @@
                     }
                 };
                 xHttpReqest.open("GET", "/unlike/" + <?php echo $headline->id ?>, true);
+                xHttpReqest.setRequestHeader("X-CSRF-TOKEN", "{{ csrf_token() }}");
                 xHttpReqest.send();
             })
         }
