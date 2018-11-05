@@ -6,9 +6,9 @@
     <div class='current-weather-left'>
         <p><?php echo $currentWeather['description'] ?></p>
         <p>
-        <span class='current-temperature'>
-            <?php echo $currentWeather['temperature'] ?>°
-        </span>C
+            <span class='current-temperature'>
+                <?php echo $currentWeather['temperature'] ?>°
+            </span>C
         </p>
     </div>
     <div class='current-weather-right'>

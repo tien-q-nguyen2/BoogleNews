@@ -1,5 +1,7 @@
 <div class='weather-forecast-day'>
-    <p><?php echo $weatherForecastForADay->when ?></p>
+    <p>
+        <?php echo $weatherForecastForADay->when ?>
+    </p>
     <img src="<?php echo $weatherForecastForADay->imageURL ?>">
     <p class='max-temperature'>
         <?php echo $weatherForecastForADay->maxTemperature ?>°C

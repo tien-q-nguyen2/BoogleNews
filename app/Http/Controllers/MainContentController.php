@@ -1,4 +1,6 @@
 <?php
+// Author: Tien Quang Nguyen
+// Date: Nov 5, 2018
 
 namespace App\Http\Controllers;
 

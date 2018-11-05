@@ -1,9 +1,6 @@
-<!-- Author: Tien Quang Nguyen
-Date: Oct 30, 2018
-Course: CPNT-262: Web Client & Server Programming
-Mid-term Assignment -->
-
 <?php
+// Author: Tien Quang Nguyen
+// Date: Nov 5, 2018
 
 /*
 |--------------------------------------------------------------------------

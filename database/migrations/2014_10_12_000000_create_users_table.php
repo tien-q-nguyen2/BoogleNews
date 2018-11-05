@@ -1,4 +1,6 @@
 <?php
+// Author: Tien Quang Nguyen
+// Date: Nov 5, 2018
 
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;

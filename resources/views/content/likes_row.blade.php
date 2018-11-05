@@ -10,22 +10,22 @@
         </span>
     </div>
     <?php if(Auth::check() and !(request()->user()->headlines->contains($headline)) ): ?>
+    
         <?php if ($headline->likes->contains(request()->user())):?>
-            <button id='unlike-button-<?php echo $headline->id ?>'
-                class='like-unlike'>
+            <button id='unlike-button-<?php echo $headline->id ?>' class='like-unlike'>
                 <i class="fas fa-heart"></i>&nbsp;Liked
             </button>
-            <button id='like-button-<?php echo $headline->id ?>' 
-                class='like-unlike display-none'><i class="far fa-heart"></i>&nbsp;Like ?
+            <button id='like-button-<?php echo $headline->id ?>' class='like-unlike display-none'>
+                <i class="far fa-heart"></i>&nbsp;Like ?
             </button>
         <?php else: ?>
-            <button id='unlike-button-<?php echo $headline->id ?>'
-                class='like-unlike display-none'>
+            <button id='unlike-button-<?php echo $headline->id ?>' class='like-unlike display-none'>
                 <i class="fas fa-heart"></i>&nbsp;Liked
             </button>
-            <button id='like-button-<?php echo $headline->id ?>' 
-                class='like-unlike'><i class="far fa-heart"></i>&nbsp;Like ?
+            <button id='like-button-<?php echo $headline->id ?>' class='like-unlike'>
+                <i class="far fa-heart"></i>&nbsp;Like ?
             </button>
         <?php endif; ?>
+
     <?php endif; ?>
 </div>
