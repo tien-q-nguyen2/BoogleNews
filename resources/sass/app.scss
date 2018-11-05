@@ -56,14 +56,19 @@ header {
   font-size: 1.3em;
 }
 
-.logo-group a {
+.logo-group .burger-menu {
   padding: 12px 16px;
   color: grey;
   border-radius: 50%;
 }
 
-.logo-group a:hover {
+.logo-group .burger-menu:hover {
   background: #ddd;
+}
+
+.logo-group .site-logo {
+  padding: 12px 16px;
+  text-decoration: none;
 }
 
 .logo-group p {
@@ -273,6 +278,22 @@ header {
   flex-direction: row;
   justify-content: space-between;
   padding: 20px 100px 0 20px;
+}
+
+.far, .fas {
+  color: #666;
+}
+
+.like-unlike .fas {
+  color: #F33E47;
+}
+
+.like-unlike {
+  background: white;
+}
+
+.like-unlike:focus {
+  outline: 0;
 }
 
 .author, .posted-time {
