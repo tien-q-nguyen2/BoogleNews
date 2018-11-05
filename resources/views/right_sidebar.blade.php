@@ -1,9 +1,9 @@
 <div class="right-sidebar">
     <div class='weather-forecast-card'>
-        @include('widgets/weather_forecast_section')
+        @include('widgets/weather_forecast_widget')
     </div>
     <div class='in-the-news'>
-        @include('widgets/in_the_news_section')
+        @include('widgets/in_the_news_widget')
     </div>
     <div class='current-user-profile'>
 

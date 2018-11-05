@@ -10638,6 +10638,8 @@ header {
   margin-bottom: 50px;
 }
 
+/***** Left sidebar *****/
+
 .left-sidebar {
   margin-top: 10px;
   width: 250px;
@@ -10703,6 +10705,8 @@ header {
       -ms-flex: 1;
           flex: 1;
 }
+
+/***** Headlines section *****/
 
 .headlines-section {
   -webkit-box-flex: 0;
@@ -10896,6 +10900,8 @@ header {
             flex: 1;
   }
 }
+
+/***** Right sidebar *****/
 
 .right-sidebar {
   width: 350px;
