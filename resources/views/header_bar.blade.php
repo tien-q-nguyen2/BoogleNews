@@ -24,7 +24,7 @@
     </div>
     <a href="#"><i class="fas fa-shapes"></i></a>
     <a href="#"><i class="fas fa-bell"></i></a>
-    <a href="/home">
+    <a href="/home" class='profile-hoverable'>
         <?php if(Auth::check()): ?>
             <img src="<?php echo request()->user()->profile->image ?>" alt="User">
         <?php else: ?>

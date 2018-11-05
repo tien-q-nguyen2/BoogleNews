@@ -15,7 +15,7 @@ class LikeOrUnlikeController extends Controller
 
         $user->likedHeadlines()->attach($headline);
 
-        return back();
+        //return back();
         //return redirect("/");
         //return $postId;
     }
@@ -27,7 +27,7 @@ class LikeOrUnlikeController extends Controller
 
         $user->likedHeadlines()->detach($headline);
 
-        return back();
+        //return back();
         //return redirect("/");
         //return $postId;
     }
