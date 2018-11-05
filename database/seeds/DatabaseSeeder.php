@@ -41,15 +41,6 @@ class DatabaseSeeder extends Seeder
                 $headline->user_id = $user->id;
                 $headline->save();
             }
-
-            // foreach(User::all() as $user){
-            //     foreach(Headline::all() as $headline){
-            //         $rand = rand(1, 100);
-            //         if ($rand < 20){
-            //             $user->likedHeadlines()->attach($headline);
-            //         }
-            //     }
-            // }
         }
     }
 }
