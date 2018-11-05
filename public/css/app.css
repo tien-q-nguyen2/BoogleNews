@@ -10479,6 +10479,10 @@ body {
   background: white;
 }
 
+.display-none {
+  display: none;
+}
+
 /********** Header ***********/
 
 header {
@@ -10615,16 +10619,18 @@ header {
   width: 34px;
   height: 34px;
   border-radius: 50%;
+  margin: 0 7px 0 -7px;
 }
 
 /************** Main section **************/
 
-main {
+.my-main {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   max-width: 1500px;
   margin-right: 250px;
+  margin-bottom: 50px;
 }
 
 .left-sidebar {
@@ -10706,7 +10712,7 @@ main {
 }
 
 .news-category h1 {
-  font-size: 1.4em;
+  font-size: 1.5em;
   font-weight: bold;
   margin-bottom: 15px;
 }
@@ -10729,6 +10735,9 @@ main {
 }
 
 .headline-card img {
+  -webkit-box-flex: 0;
+      -ms-flex: none;
+          flex: none;
   width: 100px;
   height: 100px;
   border-radius: 10px;
@@ -10743,6 +10752,7 @@ main {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  width: 100%;
 }
 
 .headline-card h2 {
@@ -10764,13 +10774,23 @@ main {
   margin-bottom: 3px;
 }
 
-.child-headline-list {
-  padding-left: 25px;
+.likes-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 20px 100px 0 20px;
 }
 
 .author,
 .posted-time {
-  font-size: 0.85em;
+  font-size: 0.9em;
   color: grey;
 }
 
@@ -10790,8 +10810,55 @@ main {
   padding-left: 10px;
 }
 
+.about-author {
+  margin-top: 50px;
+  margin-bottom: 10px;
+}
+
+.about-author h1 {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.user-profile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  padding: 0 10px;
+}
+
+.user-profile h2 {
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+.user-profile h3 {
+  font-size: 1.1em;
+}
+
+.user-image img {
+  width: 150px;
+  height: 150px;
+  -webkit-box-flex: 0;
+      -ms-flex: none;
+          flex: none;
+  margin-right: 20px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-top: 10px;
+}
+
+.profile-section {
+  margin-bottom: 15px;
+}
+
 @media screen and (max-width: 1400px) {
-  main {
+  .my-main {
     margin-right: 0;
   }
 
@@ -10844,8 +10911,9 @@ main {
   background: white;
   border-radius: 10px;
   border: 1px lightgrey solid;
-  padding: 5px;
+  padding: 5px 8px;
   margin: 5px 0;
+  margin-right: 8px;
 }
 
 .trending-topic a {
@@ -10858,7 +10926,8 @@ main {
           box-shadow: 0 0 1px 1px lightgrey;
 }
 
-.weather-forecast-card {
+.weather-forecast-card,
+.user-directory {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -10869,7 +10938,7 @@ main {
   background: #F8F9FA;
   border-radius: 10px;
   margin-bottom: 15px;
-  padding: 10px 15px;
+  padding: 10px 16px;
 }
 
 .weather-forecast-card p {
@@ -10896,7 +10965,9 @@ main {
 }
 
 .current-temperature {
+  font-weight: normal;
   font-size: 1.8em;
+  margin-right: -5px;
 }
 
 .weather-forecast-5days {
@@ -10944,5 +11015,25 @@ main {
   font-size: 0.8em;
   padding-left: 10px;
   letter-spacing: 3px;
+}
+
+.user-directory {
+  margin-top: 25px;
+  border: 3px solid lightgrey;
+  padding: 10px 13px;
+}
+
+.user-directory h3 {
+  color: grey;
+  font-size: 1.6em;
+  font-weight: bold;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.user-directory li:first-child {
+  font-weight: bold;
+  font-size: 1.3em;
 }
 

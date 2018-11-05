@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
+use App\Models\Profile;
+
 class RegisterController extends Controller
 {
     /*
@@ -63,10 +65,21 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-        ]);
+        $user = new User();
+        $user->email = $data['email'];
+        $user->name = $data['name'];
+        $user->password = Hash::make($data['password']);
+        $user->save();
+
+        $profile = new Profile();
+        $profile->user_id = $user->id;
+        $profile->description = '';
+        $profile->website = '';
+        $profile->image = 'https://picsum.photos/200/?random'.rand(1, 100);
+        $profile->save();
+
+        $this->redirectTo = '/profile';
+        return $user;
     }
+    
 }

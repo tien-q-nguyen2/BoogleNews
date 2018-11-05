@@ -11,19 +11,17 @@
 <body>
 
     <header>
-        @include('headerBar')
+        @include('header_bar')
     </header>
     <div class='header-placeholder'></div>
 
-    <main>
-        <div class="left-sidebar">
-            @include('leftSidebarOptions')
-        </div>
-        <div class='left-sidebar-placeholder'></div>
+    <main class='my-main'>
+        @include('left_sidebar')
 
         <div class='compressible-space'></div>
+        @yield('main_page_content')
 
-        @yield('landingPageContent')
+        @include('right_sidebar')
     </main>
 
 </body>

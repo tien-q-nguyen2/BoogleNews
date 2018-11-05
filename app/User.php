@@ -27,4 +27,16 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function profile(){
+        return $this->hasOne('App\Models\Profile');
+    }
+
+    public function headlines(){
+        return $this->hasMany('App\Models\Headline');
+    }
+
+    public function likedHeadlines(){
+        return $this->belongsToMany('App\Models\Headline');
+    }
 }
