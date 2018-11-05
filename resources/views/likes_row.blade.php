@@ -5,6 +5,7 @@
         <?php else: ?>
             <i id='heart-<?php echo $headline->id ?>' class="far fa-heart"></i>
         <?php endif; ?>
+        Liked by
         <span id='likes-<?php echo $headline->id ?>'>
             <?php echo $headline->likes()->count() ?>
         </span>

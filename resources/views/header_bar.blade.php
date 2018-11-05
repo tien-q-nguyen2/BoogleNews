@@ -1,9 +1,9 @@
 <div class='logo-group'>
-    <a href="/home" class='burger-menu'><i class="fas fa-bars"></i></a>
-    <a href='/' class='site-logo'>
+    <a href="#"><i class="fas fa-bars"></i></a>
+    <p>
         <span class='boo-letters'>Boo</span><span class='gle-letters'>gle</span> 
         <span class='news-letters'>News</span>
-    </a>
+    </p>
 </div>
 <div class='search-bar'>
     <a href="#"><i class="fas fa-search"></i></a>
@@ -12,8 +12,11 @@
 </div>
 <div class='menu-group'>
 <<<<<<< HEAD
+<<<<<<< HEAD
     @include('top_right_menu_group')
 =======
+=======
+>>>>>>> parent of 1c33698... make images local, add functions
     <div class='hello-user'>
         <?php if(Auth::check()): ?>
             <a href = '/profile'>Profile</a>
@@ -27,12 +30,19 @@
     </div>
     <a href="#"><i class="fas fa-shapes"></i></a>
     <a href="#"><i class="fas fa-bell"></i></a>
+<<<<<<< HEAD
     <a href="/home">
+=======
+    <a href="/home" class='profile-hoverable'>
+>>>>>>> parent of 1c33698... make images local, add functions
         <?php if(Auth::check()): ?>
             <img src="<?php echo request()->user()->profile->image ?>" alt="User">
         <?php else: ?>
             <img src="https://at-cdn-s01.audiotool.com/2013/05/11/users/guess_audiotool/avatar256x256-709d163bfa4a4ebdb25160d094551c33.jpg" alt="Question mark">
         <?php endif; ?>
     </a>
+<<<<<<< HEAD
 >>>>>>> parent of 845c042... implement liking with ajax
+=======
+>>>>>>> parent of 1c33698... make images local, add functions
 </div>
