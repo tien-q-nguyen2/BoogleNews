@@ -1,9 +1,4 @@
 <div class="right-sidebar">
-    <?php if(Auth::check()): ?>
-        <div class='hello-message'>
-                Hello, <?php echo request()->user()->name ?>
-        </div>
-    <?php endif; ?>
     <div class='weather-forecast-card'>
         @include('weather_forecast_section')
     </div>
