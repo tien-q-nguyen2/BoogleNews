@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Faker\Factory;
 
 use App\User;
 use App\Models\Profile;
@@ -13,9 +12,9 @@ class SingleDayWeatherForecast
 {
 	function __construct()
 	{
-		$this->when = '';
+        $this->when = '';
+        $this->minTemperature = '';
 		$this->maxTemperature = '';
-		$this->minTemperature = '';
 		$this->imageURL = '';
 	}
 }
@@ -37,12 +36,7 @@ class MainContentController extends Controller
         }
         $allUsers = $this->getAllUsers();
 
-        $weatherForecastFor5Days = $this->getFakeWeatherForecast5Days();
-        $faker = Factory::create();
-        $inTheNewsTopics = [];
-        for ($i = 0; $i < 10; $i++) {
-            array_push($inTheNewsTopics, $faker->name);
-        }
+        $weatherForecastFor5Days = $this->getFakeWeatherForecastFor5Days();
     
         $viewData = [
             'authorName' => $contentAuthorName,
@@ -54,10 +48,12 @@ class MainContentController extends Controller
                 'location' => 'Calgary',
                 'temperature' => '7',
                 'description' => 'Partly cloudy',
-                'imageURL' => 'https://lh3.googleusercontent.com/proxy/KOElqUH0RqiFITmz4nXxxhKOa4X3QivOknmm9SVbNaqHvx0zjEdkWReeAIh8WUvoN3BaBRtJI-yFRsQaqo39vdEO_ctpHCBvF6wsWd4rM4wEqxQBOSVzG48z27TKeV-7e6e20IhlXQUEDQ8T5SfJyoBFHA'
+                'imageURL' => '/img/partly_cloudy.png'
             ],
             'weatherForecastFor5Days' => $weatherForecastFor5Days,
-            'inTheNews' => $inTheNewsTopics,
+            'inTheNews' => ['Marcelo Cartwright', 'Andreanne Skiles III', 'Mrs. Della Bayer Sr.',
+                'Prof. Milan Breitenberg V', 'Adan Weimann', 'Alta Koss', 'Jamal Barrows',
+                'Dashawn Durgan', 'Prof. Mina Metz', 'Asia Ziemann']
         ];
         return view('welcome', $viewData);
     }
@@ -83,39 +79,26 @@ class MainContentController extends Controller
         return Headline::orderBy('id', 'desc')->get();
     }
 
-    public function getFakeWeatherForecast5Days()
+    public function getFakeWeatherForecastFor5Days()
     {
-        $weatherToday = new SingleDayWeatherForecast();
-        $weatherToday->when = 'Today';
-        $weatherToday->maxTemperature = '11';
-        $weatherToday->minTemperature = '1';
-        $weatherToday->imageURL = 'https://lh3.googleusercontent.com/proxy/KOElqUH0RqiFITmz4nXxxhKOa4X3QivOknmm9SVbNaqHvx0zjEdkWReeAIh8WUvoN3BaBRtJI-yFRsQaqo39vdEO_ctpHCBvF6wsWd4rM4wEqxQBOSVzG48z27TKeV-7e6e20IhlXQUEDQ8T5SfJyoBFHA';
+        $weatherDay1 = $this->createFakeWeatherForecast('Today', '1', '11', '/img/partly_cloudy.png');
+        $weatherDay2 = $this->createFakeWeatherForecast('Tue.', '-1', '10', '/img/partly_cloudy.png');
+        $weatherDay3 = $this->createFakeWeatherForecast('Wed.', '-2', '9', '/img/cloudy.png');
+        $weatherDay4 = $this->createFakeWeatherForecast('Thu.', '-2', '4', '/img/cloudy_sun.png');
+        $weatherDay5 = $this->createFakeWeatherForecast('Fri.', '-3', '3', '/img/snowy_rain.png');
     
-        $weatherDay2 = new SingleDayWeatherForecast();
-        $weatherDay2->when = 'Tue.';
-        $weatherDay2->maxTemperature = '10';
-        $weatherDay2->minTemperature = '-1';
-        $weatherDay2->imageURL = 'https://lh3.googleusercontent.com/proxy/KOElqUH0RqiFITmz4nXxxhKOa4X3QivOknmm9SVbNaqHvx0zjEdkWReeAIh8WUvoN3BaBRtJI-yFRsQaqo39vdEO_ctpHCBvF6wsWd4rM4wEqxQBOSVzG48z27TKeV-7e6e20IhlXQUEDQ8T5SfJyoBFHA';
-        
-        $weatherDay3 = new SingleDayWeatherForecast();
-        $weatherDay3->when = 'Wed.';
-        $weatherDay3->maxTemperature = '9';
-        $weatherDay3->minTemperature = '-2';
-        $weatherDay3->imageURL = 'https://lh5.googleusercontent.com/proxy/4WTSIIDw66Cox_tvxEgYTF3eYr94It7mAsib9UhQLsAJgyawdf5zaburHeJU4D27GlyAYpOrqEZqvYJsd_ibQdvKz2oWuZi5VNUuS4DVgr-JH9pVr3aO62W5eck94-W6yEARBUyVikqYgzwk';
-        
-        $weatherDay4 = new SingleDayWeatherForecast();
-        $weatherDay4->when = 'Thu.';
-        $weatherDay4->maxTemperature = '4';
-        $weatherDay4->minTemperature = '-2';
-        $weatherDay4->imageURL = 'https://lh3.googleusercontent.com/proxy/ssGF_4ZADor_bABtyHQlMTM5juYwYH-X_14tkhEM33kgkK2Il3tiPcaWFGEVkXik7Vspa0yoiAQN-pB41hiEMcb1PClJ-duwo8mRwBH27AZ6ug8qKCVxtFH2jpinT_tHH2xREeno1oOLFGOP7vkkoAExsyeUTMw';
-        
-        $weatherDay5 = new SingleDayWeatherForecast();
-        $weatherDay5->when = 'Fri.';
-        $weatherDay5->maxTemperature = '3';
-        $weatherDay5->minTemperature = '-3';
-        $weatherDay5->imageURL = 'https://lh6.googleusercontent.com/proxy/9wZNtnf-fjbKzUeYWGGmAdYD4LPXQTxcjSLVjFeKoiThblMCIEa1vnqZ8i5kS8OjMgvgMoFkgw95gF7XAYexEzHZx85cbQqUfqQYHqOFyCIO_uR-uDnpd3ZgA2wXWUyQUh9NYgZbdNyRRCJi6cEWSIeNajE7J-5Mtak';
-    
-        return [$weatherToday, $weatherDay2, $weatherDay3, $weatherDay4, $weatherDay5];
+        return [$weatherDay1, $weatherDay2, $weatherDay3, $weatherDay4, $weatherDay5];
+    }
+
+    public function createFakeWeatherForecast($when, $minTemp, $maxTemp, $image) 
+    {
+        $fakeWeather = new SingleDayWeatherForecast();
+        $fakeWeather->when = $when;
+        $fakeWeather->minTemperature = $minTemp;
+        $fakeWeather->maxTemperature = $maxTemp;
+        $fakeWeather->imageURL = $image;
+
+        return $fakeWeather;
     }
 
 }
