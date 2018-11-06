@@ -1,6 +1,6 @@
 <?php
 // Author: Tien Quang Nguyen
-// Date: Nov 5, 2018
+// Date: Nov 6, 2018
 
 namespace App\Http\Controllers;
 
@@ -16,6 +16,7 @@ class ProfileController extends Controller
             'user' => $user,
             'profile' => $profile
         ];
+        
         return view('forms/profile_form', $viewData);
     }
 

@@ -1,6 +1,6 @@
 <?php
 // Author: Tien Quang Nguyen
-// Date: Nov 5, 2018
+// Date: Nov 6, 2018
 
 namespace App\Http\Controllers;
 
@@ -18,20 +18,20 @@ class CreatePostController extends Controller
             'user' => $user,
             'defaultImage' => $defaultImage
         ];
+
         return view('forms/create_post_form', $viewData);
     }
 
     public function update()
     {
         $formData = request()->all();
-
+        
         request()->validate([
             'title' => 'required|min:10|max:191',
             'image' => 'nullable|url|max:191',
         ]);
 
         $user = request()->user();
-
         $headline = new Headline();
         $headline->title = $formData['title'];
         $headline->image = $formData['image'];

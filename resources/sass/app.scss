@@ -1,5 +1,5 @@
 // Author: Tien Quang Nguyen
-// Date: Nov 5, 2018
+// Date: Nov 6, 2018
 
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito');
@@ -291,11 +291,14 @@ header {
 }
 
 .like-unlike .fas {
-  color: #F33E47;
+  color: #f78576;
 }
 
 .like-unlike {
   background: white;
+  border-radius: 20px;
+  width: 72px;
+  flex: none;
 }
 
 .like-unlike:focus {

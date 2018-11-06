@@ -10803,11 +10803,16 @@ header {
 }
 
 .like-unlike .fas {
-  color: #F33E47;
+  color: #f78576;
 }
 
 .like-unlike {
   background: white;
+  border-radius: 20px;
+  width: 72px;
+  -webkit-box-flex: 0;
+      -ms-flex: none;
+          flex: none;
 }
 
 .like-unlike:focus {

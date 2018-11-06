@@ -1,6 +1,6 @@
 <?php
 // Author: Tien Quang Nguyen
-// Date: Nov 5, 2018
+// Date: Nov 6, 2018
 
 namespace App\Http\Controllers;
 
@@ -57,12 +57,14 @@ class MainContentController extends Controller
                 'Prof. Milan Breitenberg V', 'Adan Weimann', 'Alta Koss', 'Jamal Barrows',
                 'Dashawn Durgan', 'Prof. Mina Metz', 'Asia Ziemann']
         ];
+
         return view('welcome', $viewData);
     }
 
     public function getPrimaryUser($id)
     {
       $primaryUser = User::findOrFail($id);
+      
       return $primaryUser;
     }
 

@@ -1,9 +1,9 @@
-@extends('layout')
+@extends('boogle_news_layout')
 
 @section('main_page_content')
 <div class='headlines-section'>
     <div class='news-category'>
-        <h1>Content by <?php echo $authorName ?></h1>
+        <h1>Content by {{ $authorName }}</h1>
         <?php if ($headlines->count() === 0): ?>
             <h5>&nbsp;&nbsp;No posts yet</h5>
         <?php endif; ?>

@@ -14,7 +14,7 @@
             <li><a href="/">All users</a></li>
             <?php foreach($allUsers as $user): ?>
                 <li>
-                    <a href="/<?php echo $user->id ?>"><?php echo $user->name ?></a>
+                    <a href="/<?php echo $user->id ?>">{{ $user->name }}</a>
                 </li>
             <?php endforeach; ?>
         </ul>

@@ -1,6 +1,6 @@
 <?php
 // Author: Tien Quang Nguyen
-// Date: Nov 5, 2018
+// Date: Nov 6, 2018
 
 namespace App\Http\Controllers;
 
@@ -16,10 +16,6 @@ class LikeOrUnlikeController extends Controller
         $headline = Headline::find($postId);
 
         $user->likedHeadlines()->attach($headline);
-
-        return back();
-        //return redirect("/");
-        //return $postId;
     }
 
     public function unlike($postId)
@@ -28,9 +24,5 @@ class LikeOrUnlikeController extends Controller
         $headline = Headline::find($postId);
 
         $user->likedHeadlines()->detach($headline);
-
-        return back();
-        //return redirect("/");
-        //return $postId;
     }
 }

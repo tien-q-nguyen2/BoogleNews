@@ -1,6 +1,7 @@
 <script type="text/javascript">
 //This script allows users to like a post without reloading the page
     <?php foreach ($headlines as $headline): ?>
+    
         var likeButton<?php echo $headline->id ?> = 
             document.getElementById('like-button-<?php echo $headline->id ?>');
         var unlikeButton<?php echo $headline->id ?> = 
@@ -47,5 +48,6 @@
                 xHttpReqest.send();
             })
         }
+
     <?php endforeach; ?>
 </script>

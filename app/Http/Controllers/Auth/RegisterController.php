@@ -1,4 +1,6 @@
 <?php
+// Author: Tien Quang Nguyen
+// Date: Nov 6, 2018
 
 namespace App\Http\Controllers\Auth;
 
@@ -79,6 +81,7 @@ class RegisterController extends Controller
         $profile->save();
 
         $this->redirectTo = '/profile';
+        
         return $user;
     }
     

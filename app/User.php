@@ -1,6 +1,6 @@
 <?php
 // Author: Tien Quang Nguyen
-// Date: Nov 5, 2018
+// Date: Nov 6, 2018
 
 namespace App;
 
@@ -30,15 +30,18 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function profile(){
+    public function profile()
+    {
         return $this->hasOne('App\Models\Profile');
     }
 
-    public function headlines(){
+    public function headlines()
+    {
         return $this->hasMany('App\Models\Headline');
     }
 
-    public function likedHeadlines(){
+    public function likedHeadlines()
+    {
         return $this->belongsToMany('App\Models\Headline');
     }
 }
