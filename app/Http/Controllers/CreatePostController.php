@@ -13,6 +13,9 @@ class CreatePostController extends Controller
     public function index()
     {
         $user = request()->user();
+        if($user === null){
+            return redirect("/login");
+        }
         $defaultImage = 'https://picsum.photos/200/?random'.rand(1, 100);
         $viewData = [
             'user' => $user,
@@ -25,7 +28,7 @@ class CreatePostController extends Controller
     public function update()
     {
         $formData = request()->all();
-        
+
         request()->validate([
             'title' => 'required|min:10|max:191',
             'image' => 'nullable|url|max:191',
