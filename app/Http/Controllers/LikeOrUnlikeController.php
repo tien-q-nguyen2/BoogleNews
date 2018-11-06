@@ -13,6 +13,9 @@ class LikeOrUnlikeController extends Controller
     public function like($postId)
     {
         $user = request()->user();
+        if($user === null){
+            return redirect("/login");
+        }
         $headline = Headline::find($postId);
 
         $user->likedHeadlines()->attach($headline);
@@ -21,6 +24,9 @@ class LikeOrUnlikeController extends Controller
     public function unlike($postId)
     {
         $user = request()->user();
+        if($user === null){
+            return redirect("/login");
+        }
         $headline = Headline::find($postId);
 
         $user->likedHeadlines()->detach($headline);
