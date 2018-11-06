@@ -10621,6 +10621,8 @@ header {
 }
 
 .menu-group img {
+  -o-object-fit: cover;
+     object-fit: cover;
   width: 34px;
   height: 34px;
   border-radius: 50%;
@@ -10763,6 +10765,8 @@ header {
   -webkit-box-flex: 0;
       -ms-flex: none;
           flex: none;
+  -o-object-fit: cover;
+     object-fit: cover;
   width: 100px;
   height: 100px;
   border-radius: 10px;

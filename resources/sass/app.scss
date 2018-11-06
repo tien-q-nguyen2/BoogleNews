@@ -147,6 +147,7 @@ header {
 }
 
 .menu-group img {
+  object-fit: cover;
   width: 34px;
   height: 34px;
   border-radius: 50%;
@@ -266,6 +267,7 @@ header {
 
 .headline-card img {
   flex: none;
+  object-fit: cover;
   width: 100px;
   height: 100px;
   border-radius: 10px;
