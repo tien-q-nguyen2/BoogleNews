@@ -11,12 +11,15 @@ class ProfileController extends Controller
     public function index()
     {
         $user = request()->user();
+        if($user === null){
+            return redirect("/login");
+        }
         $profile = $user->profile;
         $viewData = [
             'user' => $user,
             'profile' => $profile
         ];
-        
+
         return view('forms/profile_form', $viewData);
     }
 

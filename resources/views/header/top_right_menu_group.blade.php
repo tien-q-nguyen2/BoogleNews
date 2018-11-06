@@ -1,11 +1,11 @@
 <div class='hello-user'>
     <?php if(Auth::check()): ?>
         <a href = '/profile'>Profile</a>
-            &nbsp;&nbsp;/&nbsp;&nbsp;
+            /
         <a href = '/create_post'>Create Post</a>&nbsp;
     <?php else: ?>  
         <a href = '/login'>Login</a>
-            &nbsp;&nbsp;/&nbsp;&nbsp;
+            /
         <a href = '/register'>Register</a>&nbsp;
     <?php endif; ?>
 </div>

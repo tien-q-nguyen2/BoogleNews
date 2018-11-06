@@ -153,6 +153,22 @@ header {
   margin: 0 7px 0 -7px;
 }
 
+.hello-user {
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+.hello-message {
+  position: absolute;
+  top: 80px;
+  right: 8%;
+  z-index: -1;
+  color: grey;
+  border: 3px lightgrey solid;
+  border-radius: 20px;
+  padding: 5px 10px;
+}
+
 /************** Main section **************/
 .my-main {
   display: flex;
